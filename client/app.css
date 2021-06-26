@@ -1,0 +1,272 @@
+body
+{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* color: white; */
+  /* word-spacing: 4px */
+  text-shadow: 1px 1px 1px #0A2C69;
+  background-color:white;
+  color: white;
+  
+  
+  
+  
+}
+
+.bg
+{
+  background: url('bg.jpg');
+  background-size:100% 100%;
+  background-attachment:fixed;
+  position:fixed;
+  position: absolute;
+  filter: blur(5px); 
+  width: 100%;
+  /* width: auto; */
+  height: 100%;
+  /* height: auto; */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  
+  /* color: white; */
+}
+
+#nav-logo
+{
+  width:50px;
+  height:30px;
+  text-shadow: 1px 1px 1px #0A2C69;
+  
+}
+
+.navbar-custom {
+    background-color:white;
+    text-shadow: 1px 1px 1px #0A2C69;
+    box-shadow: 0px 0px 60px -8px rgba(0,0,0,1);
+    
+    
+}
+
+.navbar-toggler.ml-auto.custom-toggler.clr,.navbar-toggler-icon,span,i,h2{
+  border-width: 1px;
+  color: #0A2C69;
+  padding: 0;
+  margin: 0;
+  /* font-size: 1.5rem; */
+  text-shadow: 1px 1px 1px #0A2C69;
+  position: relative;
+  
+} 
+
+h3.header
+{
+  padding:2rem;
+  color: white;
+  padding-top:4rem;
+  text-shadow: 1px 1px 1px #0A2C69;
+  box-shadow: 0px 0px 60px -8px rgba(0,0,0,1);
+  border: none;
+  
+  
+}
+
+h4
+{
+  color: white;
+  text-shadow: 1px 1px 1px #0A2C69;
+  border: none;
+  box-shadow: 0px 0px 60px -8px rgba(0,0,0,1);
+}
+
+hr.line
+{
+  float: center;
+  border: none; 
+  background-image: -webkit-linear-gradient(left,#fff, #ffffff, #fff);
+}
+
+form {
+    border: none;
+
+    display: inline-block;
+    border-radius:90px;
+    text-shadow: 1px 1px 1px #0A2C69;
+}
+
+#proc-btn
+{
+  background: #ffffff;
+  border: none;
+  box-shadow: 0px 0px 59px -4px rgba(0,0,0,1);
+  padding: 8px;
+  margin: 5px;
+  font-weight: 700;
+  
+}
+
+.flash,.msg1,.msg2,.msg3
+{
+  color:rgb(255, 255, 255);
+  font-size: 1.2rem !important;
+  text-align: center;
+  text-shadow: 0px 0px 1px #000000;
+  box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.4);
+  /* margin: auto; */
+  /* display: none; */
+}
+
+#file,#proc-btn
+{
+    font-size:20px;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0px 0px 60px -4px rgba(0,0,0,1);  
+    border-radius: 40px;
+    flex: auto;
+ 
+}
+#file,#proc-btn:hover
+{
+  background-color: #3BA4FA;
+  color:white
+}
+
+.box{
+    display: none;
+    /* width: 100%; */
+    /* height: 50; */
+}
+
+a:hover + .box,.box:hover{
+    display: block;
+    position: relative;
+    z-index: 100;
+    /* height: 200px; */
+}
+
+
+.footer-dark {
+    text-shadow: 0px 0px 1px #000000;
+    padding: 20px 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    color: #0A2C69;
+    background-color:white;
+    position: relative;
+    display: block;
+
+}
+
+.footer-dark h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    
+    font-weight: 700;
+    font-size: 23px
+}
+
+.footer-dark ul {
+    padding: 0;
+    list-style: none;
+    line-height: 1.6;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer-dark ul a {
+    color: inherit;
+    /* padding: 2rem; */
+    text-decoration: none;
+    
+}
+
+.footer-dark ul li a {
+    color: inherit;
+    /* padding: 2rem; */
+    font-size: 19px;
+    text-decoration: none;
+    
+}
+
+.footer-dark ul a:hover {
+    color: #3BA4FA;
+}
+
+i:hover
+{
+  color:#3BA4FA;
+}
+
+@media (max-width:767px) {
+    .footer-dark .item:not(.social) {
+        text-align: center;
+        padding-bottom: 20px
+    }
+    hr.line
+{
+  float: center;
+  border: none; 
+  background-image: -webkit-linear-gradient(left,#0A2C69);
+}
+}
+
+
+@media (max-width:767px) {
+    .footer-dark .item.text {
+        margin-bottom: 0;
+    }
+    hr.line
+{
+  float: center;
+  border: none; 
+  background-image: -webkit-linear-gradient(left,#0A2C69);
+}
+}
+
+.footer-dark .item.text p {
+    /* opacity: 0.6; */
+    margin-bottom: 0;
+    
+}
+
+.footer-dark .item.social {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    text-align: center
+}
+
+@media (max-width:991px) {
+    .footer-dark .item.social {
+        text-align: center;
+        margin-top: 20px
+    }
+    hr.line
+{
+  float: center;
+  border: none; 
+  background-image: -webkit-linear-gradient(left,#0A2C69);
+}
+}
+
+
+hr.dark-line
+{
+  float: center;
+    border: none; 
+    width: 20;
+    background-image: -webkit-linear-gradient(left,#0A2C69);
+    
+  
+}
+
+@media screen and (max-width: 720px )
+{
+  #file
+  {
+    width: 100%;
+  }
+
+}

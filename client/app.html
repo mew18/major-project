@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/app.css')}}">
+    
+    <link rel="shortcut icon" type="image/jpg" href="WP.jpg">
+
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>MAJOR PROECT</title>
+</head>
+
+<body>
+
+    <div class="bg"></div>
+
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
+        <div class="container-fluid">
+
+            <a class="navbar-brand abs" href="#"> <h2>Major Project</h2></a>
+            <button class="navbar-toggler ml-auto custom-toggler clr" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
+                <span class="navbar-toggler-icon clr">&#9776;</span>
+            </button>
+
+            <div class="navbar-collapse collapse" id="collapseNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://github.com/mew18/Mewzic"><i
+                                class="fa fa-github fa-2x"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h3 class="header">A neural network to generate captions for an image using CNN and RNN with BEAM Search</h3>
+    <hr class="line">
+
+    <div class="upload">
+
+        <form method="post" action="/" enctype="multipart/form-data">
+            <dl>
+                <p>
+                    <h4>Upload a .jpeg image </h4>
+                    <br>
+                    <input type="file" name="file" id="file" class="form-control" autocomplete="off" required>
+                </p>
+            </dl>
+            <p>
+                <input type="submit" value="Upload" id="proc-btn">
+            </p>
+        </form>
+
+        <br>
+
+        <div class="flash">
+            {% with messages = get_flashed_messages(category_filter=["upload"]) %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="msg1">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+
+        
+    </div>
+
+    <div class="user-show flash">
+        <hr class="line">
+
+        {% if filename %}
+        <div class="flash">
+            <img  class="flash msg1" src="{{ url_for('display_image', filename=filename) }}">
+        </div>
+        {% endif %}
+        <hr class="line">
+    </div>
+
+    <div class="nn-process">
+        <form action="/predict" method="POST" class="process">
+            <input type="submit" value="Create Caption" id="proc-btn" />
+        </form>
+        <br>
+        <br>
+        <div class="flash">
+            {% with messages = get_flashed_messages(category_filter=["predict"]) %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="msg2">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 item">
+                        <h3>Other Projects</h3>
+                        <ul>
+                            <li><a href="https://github.com/mew18/Mewzic">Mewzic</a><div class="box">
+                                <iframe src="https://mewzic1.herokuapp.com/" width="500px" height="500px">
+                                </iframe>
+                            </div></li>
+                            <li><a href="https://github.com/mew18/KRMU-TINDER-APP">KRMU Gallery App</a><div class="box">
+                                <iframe src="https://github.com/mew18/KRMU-TINDER-APP" width="500px" height="500px">
+                                </iframe>
+                            </div></li>
+                            <li><a href="https://github.com/mew18/Covid19-Prediction-Analysis-XGBoost">Covid 19 Death Prediction</a><div class="box">
+                                <iframe src="https://github.com/mew18/Covid19-Prediction-Analysis-XGBoost" width="500px" height="500px">
+                                </iframe>
+                            </div></li>
+                            <li><a href="https://github.com/mew18/Sentiment-Analysis-platform">Sentiment Anaylyis</a><div class="box">
+                                <iframe src="https://github.com/mew18/Sentiment-Analysis-platform" width="500px" height="500px">
+                                </iframe>
+                            </div></li>
+                            <li><a href="https://github.com/mew18/Weather-Prediction-">Weather Prediction</a><div class="box">
+                                <iframe src="https://github.com/mew18/Weather-Prediction-" width="500px" height="500px">
+                                </iframe>
+                            </div></li>
+                            <li><a href="https://github.com/mew18/RGB-fy-Images">Color B/W Images</a><div class="box">
+                                <iframe src="https://github.com/mew18/RGB-fy-Images" width="500px" height="500px">
+                                </iframe>
+                            </div></li>
+                        </ul>
+                        <hr class="dark-line">
+                    </div>
+                    
+                    <div class="col-md-6 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="https://twitter.com/mrmewww"><i class="fa fa-2x fa-twitter"></i></a></li>
+                            <li><a href="https://github.com/mew18"><i class="fa fa-2x fa-github"></i></a></li>
+                            <li><a href="https://steamcommunity.com/id/billipro18"><i class="fa fa-2x fa-steam"></i></a></li>
+                            <li><a href="https://www.reddit.com/user/sgtwrecker"><i class="fa fa-2x fa-reddit"></i></a></li>
+                        </ul>
+
+                        <hr class="dark-line">
+
+                    </div>
+                                    
+
+                    
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
