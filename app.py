@@ -34,25 +34,19 @@ def display_image(filename):
     return redirect(url_for('static', filename="test_img.jpg"), code=301)
 
 
-@app.route("/predict", methods=["POST", "GET"])
+@app.route("/predict", methods=["POST"])
 def predict():
-    if request.method == 'POST':
-        try:
-            import predict
-            output = predict.predict()
-            flash(str(output), 'predict')
-
-            # return redirect(url_for('predict')) #bad
-            return render_template('app.html', filename="test_img.jpg")  # good
-            # return redirect(request.url) #bad
-            # return redirect(request.referrer)  #bad
-
-
-        except Exception as e2:
-            print(e2)
-            return str(e2)
-    else:
-        return redirect(url_for('init'))
+    try:
+        import predict
+        output = predict.predict()
+        flash(str(output), 'predict')
+        # return redirect(url_for('predict')) #bad
+        return render_template('app.html', filename="test_img.jpg")  # good
+        # return redirect(request.url) #bad
+        # return redirect(request.referrer)  #bad
+    except Exception as e2:
+        print(e2)
+        return str(e2)
 
 
 if __name__ == "__main__":

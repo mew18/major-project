@@ -1,7 +1,6 @@
+import time
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
-import time
 
 start = time.time()
 import pickle
