@@ -1,30 +1,29 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 import time
 
 start = time.time()
-
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import pickle
 import numpy as np
 from keras import backend as K
 K.clear_session()
-from keras.applications.inception_v3 import preprocess_input
-from keras.models import load_model
+from keras.applications.inception_v3 import preprocess_input,InceptionV3
+from keras.models import load_model,Model
 from keras.preprocessing import image, sequence
-
 end = time.time()
 
 print("1 =",start-end)
 
 start = time.time()
 model = load_model('server/utils/model.h5', compile=False)
-inception_v3 = load_model('server/utils/InceptionV3.h5', compile=False)
+# inception_v3 = load_model('server/utils/InceptionV3.h5', compile=False)
 end = time.time()
 
 print("2 =", start-end)
 
-# incept_model = InceptionV3(weights='imagenet')
-# model_new = Model(incept_model.input, incept_model.layers[-2].output)
+incept_model = InceptionV3(weights='imagenet')
+inception_v3 = Model(incept_model.input, incept_model.layers[-2].output)
 max_length=38 
 test_img_path = 'client/test_img.jpg'
 
