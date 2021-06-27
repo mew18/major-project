@@ -111,7 +111,7 @@ form {
   background-color: #0A2C69;
   border-style: solid;
   border-radius: 40px;
-  width: 25%;
+  width: auto;
   margin: auto;
   text-shadow: 0px 0px 1px #000000;
   box-shadow: none;
@@ -163,6 +163,7 @@ a:hover+.box, .box:hover {
   color: #0A2C69;
   background-color: white;
   text-shadow: 1px 1px 1px #0A2C69;
+
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -171,7 +172,7 @@ a:hover+.box, .box:hover {
 .row1 {
   width: 100%;
   display: flex;
-  /* flex-direction: row; */
+  flex-direction: row;
 }
 
 .col-six {
@@ -209,6 +210,11 @@ a:hover+.box, .box:hover {
   text-decoration: none;
 }
 
+.social
+{
+  padding: 4px;
+}
+
 .footer-dark ul a:hover {
   color: #3BA4FA;
 }
@@ -219,7 +225,7 @@ i:hover {
 
 @media (max-width:767px) {
   .msg1, .msg2 {
-    width: 50%;
+    width: auto;
   }
   img.img-center {
     width: 90%;
