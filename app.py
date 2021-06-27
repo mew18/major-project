@@ -40,9 +40,9 @@ def display_image(filename):
 def predict():
     if request.method == 'POST':
         try:
-            # import predict
-            # output = predict.predict()
-            flash(str("cat"), 'predict')
+            import predict
+            output = predict.predict()
+            flash(str(output), 'predict')
 
             # return redirect(url_for('predict')) #bad
             return render_template('app.html', filename="test_img.jpg")  # good
