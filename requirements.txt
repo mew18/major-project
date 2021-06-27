@@ -1,7 +1,7 @@
 Werkzeug==1.0.1
 Flask==1.1.2
-keras==2.3.1
-numpy==1.19
+Keras==2.4.3
+numpy==1.19.5
 tensorflow-cpu==2.4.0
 gunicorn==20.0.4
 numpy==1.19
