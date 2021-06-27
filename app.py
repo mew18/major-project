@@ -25,13 +25,13 @@ def upload():
                 os.rename(uploads_dir+filename, uploads_dir + "test_img.jpg")
             except Exception as e1:
                 print(e1)
-            return render_template('app.html',filename=filename)
+            return render_template('app.html', filename="test_img.jpg")
     else:
         return redirect(request.url)
 
 @app.route('/display/<filename>')
 def display_image(filename):
-    return redirect(url_for('static', filename=filename), code=301)
+    return redirect(url_for('static', filename="test_img.jpg"), code=301)
 
 
 @app.route("/predict", methods=["POST", "GET"])
