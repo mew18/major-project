@@ -3,13 +3,12 @@ from flask import Flask, flash, redirect, render_template, request, url_for
 from werkzeug.utils import secure_filename
 
 # instance relative config allows u to change dir path VIMP
-app = Flask(__name__, instance_relative_config=True,template_folder='client/')
-app.static_folder = 'client/'
+app = Flask(__name__, instance_relative_config=True,template_folder='./client')
+app.static_folder = './client'
 app.secret_key = "joe mama"
-uploads_dir = os.path.join('client/')                                                                                                                                                                                                                
+uploads_dir = os.path.join('./client/')                                                                                                                                                                                                                
 
 # filename = secure_filename("test_img.jpg")
-filename=" "
 
 @app.route('/')  # this decides if you need to run html or not
 def init():
